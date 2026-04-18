@@ -6,8 +6,8 @@ export default create({
   fontBase: '"Inter", sans-serif',
   fontCode: '"Roboto Mono", monospace',
 
-  brandTitle: "Figma SDS",
-  brandUrl: "https://figma.com",
+  brandTitle: "MonoFly SDS",
+  brandUrl: "https://kaleidoscopeofbutterflies.com",
   brandTarget: "_self",
 
   //
