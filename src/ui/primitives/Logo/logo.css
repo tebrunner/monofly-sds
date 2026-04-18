@@ -2,6 +2,7 @@
   --border-radius: var(--sds-size-radius-200);
   border-radius: var(--border-radius);
   position: relative;
+  color: inherit;
 
   &[data-focus-visible] {
     outline: none;
@@ -18,9 +19,17 @@
       top: calc(-1 * var(--offset));
     }
   }
+
   > svg {
-    --logo-color: var(--sds-color-icon-default-default);
+    color: var(--logo-color, var(--sds-color-icon-default-default));
     height: auto;
     width: var(--sds-size-icon-small);
   }
+}
+
+.logo__text {
+  font-family: Inter, sans-serif;
+  font-size: 19px;
+  font-weight: 300;
+  color: inherit;
 }

@@ -28,28 +28,32 @@ export function Footer({ className, ...props }: FooterProps) {
         <FlexItem size="minor">
           <Flex direction="column" gap="600" alignSecondary="start">
             <FlexItem>
-              <Logo className="footer-logo" />
+              <Logo className="footer-logo" 
+                href="/"
+                aria-label="MonoFly logo, navigate to homepage"
+                showText={false}
+              />
             </FlexItem>
             <TextLinkList density={listDensity}>
               <TextListItem>
-                <TextLink href="https://www.figma.com">figma.com</TextLink>
+                <TextLink href="https://www.kaleidoscopeofbutterflies.com" target="_blank">monofly.com</TextLink>
               </TextListItem>
               <TextListItem>
-                <TextLink href="https://www.x.com/figma">X</TextLink>
+                <TextLink href="https://www.x.com/monoflyui" target="_blank">Twitter</TextLink>
               </TextListItem>
               <TextListItem>
-                <TextLink href="https://instagram.com/figma">
+                <TextLink href="https://instagram.com/kobutterflies" target="_blank">
                   Instagram
                 </TextLink>
               </TextListItem>
               <TextListItem>
-                <TextLink href="https://www.youtube.com/@Figma">
+                <TextLink href="https://www.youtube.com/@JeffersonKidd" target="_blank">
                   YouTube
                 </TextLink>
               </TextListItem>
               <TextListItem>
-                <TextLink href="https://www.linkedin.com/company/figma/">
-                  LinkedIn
+                <TextLink href="https://www.github.com/kobutterflies" target="_blank">
+                  GitHub
                 </TextLink>
               </TextListItem>
             </TextLinkList>

@@ -7,9 +7,9 @@ export type SectionProps = ComponentPropsWithoutRef<
   "section" | "header" | "footer"
 > & {
   elementType?: "section" | "header" | "footer";
-  padding?: "600" | "800" | "1200" | "1600" | "4000";
-  paddingTop?: "600" | "800" | "1200" | "1600" | "4000";
-  paddingBottom?: "600" | "800" | "1200" | "1600" | "4000";
+  padding?: "400" | "600" | "800" | "1200" | "1600" | "4000";
+  paddingTop?: "400" | "600" | "800" | "1200" | "1600" | "4000";
+  paddingBottom?: "400" | "600" | "800" | "1200" | "1600" | "4000";
 } & (
     | {
         variant?: "brand" | "neutral" | "stroke" | "subtle";

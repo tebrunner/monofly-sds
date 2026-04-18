@@ -190,12 +190,16 @@ export function Header({ className, ...props }: HeaderProps) {
       className="header"
       elementType="header"
       variant="stroke"
-      padding={"800"}
+      padding={"400"}
       {...props}
     >
       <Flex container alignPrimary="space-between" alignSecondary="center">
         <FlexItem size="minor">
-          <Logo />
+          <Logo 
+            href="/"
+            aria-label="MonoFly logo, navigate to homepage"
+            showText={true}
+          />
         </FlexItem>
         <FlexItem size="major">
           <Flex gap="600" alignPrimary="end" alignSecondary="center">
