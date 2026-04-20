@@ -21,15 +21,15 @@
   }
 
   > svg {
-    color: var(--logo-color, var(--sds-color-icon-default-default));
+    color: var(--logo-color);
     height: auto;
     width: var(--sds-size-icon-small);
   }
 }
 
 .logo__text {
-  font-family: Inter, sans-serif;
-  font-size: 19px;
-  font-weight: 700;
+  font-family: var(--sds-typography-family-serif);
+  font-size: 24px;
+  font-weight: 500;
   color: inherit;
 }

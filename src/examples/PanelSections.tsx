@@ -10,20 +10,20 @@ export function PanelSections() {
 
   return (
     <>
-      <Section padding={sectionPadding} variant="brand">
+      <Section padding={sectionPadding} variant="stroke">
         <Panel type="auto">
           <FlexItem size="fill">
             <Image
-              src="https://picsum.photos/seed/Mountain landscape/1200/900"
+              src="https://www.gwu.edu/sites/g/files/zaxdzs7131/files/styles/d10/public/image/FoggyBottom_CampusLife_fallstock15_up-2015-ZWM_9934%20%281%29.jpg?itok=WzufJP5_"
               alt="Mountain landscape"
-              aspectRatio="fill"
-              size="large"
+              aspectRatio="16-9"
+              size="fill"
             />
           </FlexItem>
         </Panel>
       </Section>
 
-      <Section padding={sectionPadding} variant="stroke">
+      <Section padding={sectionPadding} variant="brand">
         <Panel alignSecondary="center" gap={flexGap} type="half">
           <Image
             src="https://picsum.photos/seed/Forest path/1200/900"
@@ -52,7 +52,7 @@ export function PanelSections() {
         </Panel>
       </Section>
 
-      <Section padding={sectionPadding} variant="neutral">
+      <Section padding={sectionPadding} variant="stroke">
         <Panel alignSecondary="center" type="half" gap={flexGap}>
           <FlexItem size="half">
             <Flex direction="column" gap="600">
@@ -80,7 +80,7 @@ export function PanelSections() {
         </Panel>
       </Section>
 
-      <Section padding={sectionPadding} variant="stroke">
+      <Section padding={sectionPadding} variant="brand">
         <Panel type="half" gap={flexGap}>
           <Image
             src="https://picsum.photos/seed/Desert dunes/1200/900"

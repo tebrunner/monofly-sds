@@ -44,7 +44,7 @@ export function ProductGrid() {
   });
 
   return (
-    <Section padding={sectionPadding} variant="stroke">
+    <Section padding={sectionPadding} variant="neutral">
       <Flex container wrap gap={flexGap} alignPrimary="stretch">
         <Flex direction="column" gap="1200" alignSecondary="stretch">
           <Flex

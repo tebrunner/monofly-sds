@@ -41,7 +41,7 @@ export function HeaderAuth() {
           })
         }
       >
-        Log in
+        Sign in
       </Button>
       <Button
         size="small"

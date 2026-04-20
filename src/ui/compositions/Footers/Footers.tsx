@@ -37,25 +37,13 @@ export function Footer({ className, ...props }: FooterProps) {
             </FlexItem>
             <TextLinkList density={listDensity}>
               <TextListItem>
-                <TextLink href="https://www.kaleidoscopeofbutterflies.com" target="_blank">monofly.com</TextLink>
+                <TextLink href="https://gwglobalmentalhealth.com" target="_blank">gmhlab.com</TextLink>
               </TextListItem>
               <TextListItem>
-                <TextLink href="https://www.x.com/monoflyui" target="_blank">Twitter</TextLink>
+                <TextLink href="https://linkedin.com/company/gwglobalmentalhealth" target="_blank">LinkedIn</TextLink>
               </TextListItem>
               <TextListItem>
-                <TextLink href="https://instagram.com/kobutterflies" target="_blank">
-                  Instagram
-                </TextLink>
-              </TextListItem>
-              <TextListItem>
-                <TextLink href="https://www.youtube.com/@JeffersonKidd" target="_blank">
-                  YouTube
-                </TextLink>
-              </TextListItem>
-              <TextListItem>
-                <TextLink href="https://www.github.com/kobutterflies" target="_blank">
-                  GitHub
-                </TextLink>
+                <TextLink href="https://github.com/gmhlab" target="_blank">GitHub</TextLink>
               </TextListItem>
             </TextLinkList>
           </Flex>

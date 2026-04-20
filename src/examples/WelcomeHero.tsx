@@ -8,7 +8,7 @@ export function WelcomeHero() {
   const flexGap = isMobile ? "600" : "1200";
 
   return (
-    <Section padding={sectionPadding} variant="stroke">
+    <Section padding={sectionPadding} variant="brand">
       <Flex
         container
         wrap
@@ -20,7 +20,7 @@ export function WelcomeHero() {
       >
         <TextContentTitle
           align="center"
-          title="Welcome Home"
+          title="Welcome to GMH Lab"
           subtitle={<>We're happy to have&nbsp;you.</>}
         />
         <Form singleLine>
