@@ -357,7 +357,7 @@ export type ProductInfoCardProps = Pick<CardProps, "asset"> & {
  * It has no props, but accepts a size prop to determine the size of the card.
  */
 
-export function ProductInfoCardSkeleton({}: {}) {
+export function ProductInfoCardSkeleton() {
   return (
     <Card
       padding="600"

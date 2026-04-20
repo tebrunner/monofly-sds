@@ -184,6 +184,7 @@ export function HeaderAuth() {
 }
 
 export type HeaderProps = Omit<SectionProps, "variant" | "padding" | "src">;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function Header({ className, ...props }: HeaderProps) {
   return (
     <Section

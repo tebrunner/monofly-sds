@@ -16,5 +16,5 @@ figma.connect(AccordionItem, "<FIGMA_ACCORDION_ACCORDION_ITEM>", {
     title: figma.string("Title"),
     children: figma.string("Content"),
   },
-  example: ({ dataSelected, ...props }) => <AccordionItem {...props} />,
+  example: (props) => <AccordionItem title={props.title} children={props.children} />,
 });

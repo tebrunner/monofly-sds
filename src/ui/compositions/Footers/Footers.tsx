@@ -12,6 +12,7 @@ import {
 } from "primitives";
 
 export type FooterProps = Omit<SectionProps, "variant" | "padding" | "src">;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function Footer({ className, ...props }: FooterProps) {
   const { isTabletDown } = useMediaQuery();
   const listDensity = isTabletDown ? "tight" : "default";

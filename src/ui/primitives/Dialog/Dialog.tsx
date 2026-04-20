@@ -108,6 +108,7 @@ export type DialogModalProps = RACModalOverlayProps;
 export function DialogModal({
   children,
   className,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   isDismissable,
   ...props
 }: DialogModalProps) {

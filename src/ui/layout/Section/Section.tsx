@@ -32,7 +32,6 @@ export function Section({
   paddingTop,
   ...props
 }: SectionProps) {
-  const { variant = "subtle", ...spreadProps } = props;
   const classNames = clsx(
     className,
     "section",
@@ -54,19 +53,19 @@ export function Section({
   switch (elementType) {
     case "section":
       return (
-        <section className={classNames} {...spreadProps}>
+        <section className={classNames} {...props}>
           {image} {children}
         </section>
       );
     case "header":
       return (
-        <header className={classNames} {...spreadProps}>
+        <header className={classNames} {...props}>
           {image} {children}
         </header>
       );
     case "footer":
       return (
-        <footer className={classNames} {...spreadProps}>
+        <footer className={classNames} {...props}>
           {image} {children}
         </footer>
       );

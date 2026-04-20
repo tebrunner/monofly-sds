@@ -8,6 +8,7 @@ import "./pagination.css";
 export type PaginationProps = React.ComponentPropsWithoutRef<"nav">;
 export function Pagination({
   "aria-label": ariaLabel = "Page navigation",
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className,
   ...props
 }: PaginationProps) {

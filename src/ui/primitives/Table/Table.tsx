@@ -79,10 +79,7 @@ export function TableColumn({
 }
 
 export type TableBodyProps<T> = RACTableBodyProps<T>;
-export function TableBody<T extends object>({
-  className,
-  ...props
-}: TableBodyProps<T>) {
+export function TableBody<T extends object>(props: TableBodyProps<T>) {
   return <RACTableBody {...props} />;
 }
 

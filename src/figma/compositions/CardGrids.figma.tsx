@@ -93,29 +93,33 @@ figma.connect(Section, "<FIGMA_SECTIONS_CARD_GRID_PRICING>", {
     schedule: figma.children("Navigation Pill List"),
   },
   example: ({ schedule }) => {
-    const { monthlyPlans } = usePricing();
-    const { isMobile } = useMediaQuery();
-    const padding = isMobile ? "600" : "1200";
-    const gap = isMobile ? "600" : "1200";
-    const gapCards = isMobile ? "600" : "1200";
-    const size = isMobile ? "small" : "large";
+    function PricingGridExample() {
+      const { monthlyPlans } = usePricing();
+      const { isMobile } = useMediaQuery();
+      const padding = isMobile ? "600" : "1200";
+      const gap = isMobile ? "600" : "1200";
+      const gapCards = isMobile ? "600" : "1200";
+      const size = isMobile ? "small" : "large";
 
-    return (
-      <Section padding={padding}>
-        <Flex container direction="column" gap={gap}>
-          {schedule}
-          <Flex container direction="row" gap={gapCards}>
-            {monthlyPlans.map((option, i) => (
-              <PricingCard
-                key={option.sku}
-                size={size}
-                {...pricingPlanToPricingCardProps(option, i)}
-              />
-            ))}
+      return (
+        <Section padding={padding}>
+          <Flex container direction="column" gap={gap}>
+            {schedule}
+            <Flex container direction="row" gap={gapCards}>
+              {monthlyPlans.map((option, i) => (
+                <PricingCard
+                  key={option.sku}
+                  size={size}
+                  {...pricingPlanToPricingCardProps(option, i)}
+                />
+              ))}
+            </Flex>
           </Flex>
-        </Flex>
-      </Section>
-    );
+        </Section>
+      );
+    }
+
+    return <PricingGridExample />;
   },
 });
 

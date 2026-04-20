@@ -15,7 +15,7 @@ const meta: Meta<typeof HTMLIFrameElement> = {
 };
 export default meta;
 
-export const StoryHello: StoryObj<{}> = {
+export const StoryHello: StoryObj<Record<string, never>> = {
   name: "Hello",
   render: () => (
     <Section>

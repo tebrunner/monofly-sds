@@ -23,6 +23,7 @@ export function PricingProvider({ children }: { children?: ReactNode }) {
         setAnnualPlans(annual);
         setCurrentPlan(monthly[0]);
       } catch (err) {
+        // TODO: handle error
       } finally {
         setIsLoading(false);
       }

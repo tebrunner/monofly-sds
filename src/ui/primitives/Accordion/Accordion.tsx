@@ -21,14 +21,14 @@ export type AccordionItemProps = DisclosureProps & { title: string };
 export function AccordionItem({
   className,
   title,
+  children,
   isExpanded,
   isDisabled,
-  children,
   ...props
 }: AccordionItemProps) {
   const classNames = clsx(className, "accordion-item");
   return (
-    <Disclosure className={classNames} {...props}>
+    <Disclosure className={classNames} isExpanded={isExpanded} isDisabled={isDisabled} {...props}>
       <Heading className="accordion-item-title">
         <Button slot="trigger">
           {title}
