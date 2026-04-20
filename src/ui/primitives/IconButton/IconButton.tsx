@@ -10,13 +10,14 @@ import "./iconButton.css";
 
 export type IconButtonProps = Omit<ButtonProps, "aria-label"> & {
   "aria-label": string;
+  href?: string;
 };
 export const IconButton = forwardRef(function IconButton(
   { className, ...props }: IconButtonProps,
   ref: ForwardedRef<HTMLElement>,
 ) {
   const classNames = clsx(className, "icon-button");
-  return <Button {...props} {...ref} className={classNames} />;
+  return <Button {...(props as ButtonProps)} {...ref} className={classNames} />;
 });
 
 export type DestructiveIconButtonProps = Omit<
@@ -24,10 +25,13 @@ export type DestructiveIconButtonProps = Omit<
   "aria-label"
 > & {
   "aria-label": string;
+  href?: string;
 };
 export const DestructiveIconButton = forwardRef(function IconButton(
   props: DestructiveIconButtonProps,
   ref: ForwardedRef<HTMLElement>,
 ) {
-  return <ButtonDanger {...props} {...ref} className="icon-button" />;
+  return (
+    <ButtonDanger {...(props as ButtonDangerProps)} {...ref} className="icon-button" />
+  );
 });

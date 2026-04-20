@@ -1,16 +1,38 @@
 import { clsx } from "clsx";
 import React, { ComponentPropsWithoutRef } from "react";
-import { Button as RACButton, Link as RACLink } from "react-aria-components";
-import { type AnchorOrButtonProps } from "utils";
+import {
+  Button as RACButton,
+  Link as RACLink,
+  type ButtonProps as RACButtonProps,
+} from "react-aria-components";
 import "./button.css";
 
-export type ButtonProps = Omit<ButtonBaseProps, "variant"> & {
-  variant?: Exclude<
-    ButtonBaseProps["variant"],
-    "danger-primary" | "danger-subtle"
-  >;
+type ButtonCommonProps = {
+  type?: ComponentPropsWithoutRef<"button">["type"];
+  size?: "small" | "medium";
+  children?: React.ReactNode;
+  style?: React.CSSProperties;
+  className?: string;
 };
-export const Button = React.forwardRef(function Button(
+
+type ButtonLinkProps = Omit<
+  ComponentPropsWithoutRef<typeof RACLink>,
+  "children" | "style" | "className" | "render"
+> & ButtonCommonProps;
+
+type ButtonNativeProps = Omit<
+  RACButtonProps,
+  "children" | "style" | "className" | "render"
+> & ButtonCommonProps;
+
+export type ButtonProps =
+  | (ButtonLinkProps & {
+      variant?: "primary" | "neutral" | "subtle";
+    })
+  | (ButtonNativeProps & {
+      variant?: "primary" | "neutral" | "subtle";
+    });
+export const Button = React.forwardRef<HTMLElement, ButtonProps>(function Button(
   { className, size = "medium", variant = "primary", ...props }: ButtonProps,
   ref: React.ForwardedRef<HTMLElement>,
 ) {
@@ -25,7 +47,7 @@ export const Button = React.forwardRef(function Button(
 
   return isAnchorProps(props) ? (
     <RACLink
-      {...sharedProps}
+      {...(sharedProps as ComponentPropsWithoutRef<typeof RACLink>)}
       className={classNames}
       ref={ref as React.ForwardedRef<HTMLAnchorElement>}
     >
@@ -33,7 +55,7 @@ export const Button = React.forwardRef(function Button(
     </RACLink>
   ) : (
     <RACButton
-      {...sharedProps}
+      {...(sharedProps as RACButtonProps)}
       className={classNames}
       ref={ref as React.ForwardedRef<HTMLButtonElement>}
     >
@@ -42,16 +64,17 @@ export const Button = React.forwardRef(function Button(
   );
 });
 
-export type ButtonDangerProps = Omit<ButtonBaseProps, "variant"> & {
-  variant?: Exclude<
-    ButtonBaseProps["variant"],
-    "primary" | "subtle" | "neutral"
-  >;
-};
+export type ButtonDangerProps =
+  | (ButtonLinkProps & {
+      variant?: "danger-primary" | "danger-subtle";
+    })
+  | (ButtonNativeProps & {
+      variant?: "danger-primary" | "danger-subtle";
+    });
 /**
  * Only used for destructive actions
  */
-export const ButtonDanger = React.forwardRef(function Button(
+export const ButtonDanger = React.forwardRef<HTMLElement, ButtonDangerProps>(function Button(
   {
     className,
     size = "medium",
@@ -71,7 +94,7 @@ export const ButtonDanger = React.forwardRef(function Button(
 
   return isAnchorProps(props) ? (
     <RACLink
-      {...sharedProps}
+      {...(sharedProps as ComponentPropsWithoutRef<typeof RACLink>)}
       className={classNames}
       ref={ref as React.ForwardedRef<HTMLAnchorElement>}
     >
@@ -79,7 +102,7 @@ export const ButtonDanger = React.forwardRef(function Button(
     </RACLink>
   ) : (
     <RACButton
-      {...sharedProps}
+      {...(sharedProps as RACButtonProps)}
       className={classNames}
       ref={ref as React.ForwardedRef<HTMLButtonElement>}
     >
@@ -88,22 +111,10 @@ export const ButtonDanger = React.forwardRef(function Button(
   );
 });
 
-type ButtonBaseProps = {
-  type?: ComponentPropsWithoutRef<"button">["type"];
-  size?: "small" | "medium";
-  variant?:
-    | "primary"
-    | "neutral"
-    | "subtle"
-    | "danger-primary"
-    | "danger-subtle";
-} & AnchorOrButtonProps;
-
 function isAnchorProps(
-  props: ButtonBaseProps | ButtonDangerProps,
-): props is (ButtonBaseProps | ButtonDangerProps) &
-  ComponentPropsWithoutRef<typeof RACLink> {
-  return "href" in props;
+  props: ButtonProps | ButtonDangerProps,
+): props is ButtonLinkProps {
+  return "href" in props && props.href !== undefined;
 }
 
 export type ButtonGroupProps = React.ComponentPropsWithoutRef<"div"> & {
