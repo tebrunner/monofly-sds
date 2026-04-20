@@ -6,7 +6,7 @@ export default create({
   fontBase: '"Inter", sans-serif',
   fontCode: '"Roboto Mono", monospace',
 
-  brandTitle: "MonoFly SDS",
+  brandTitle: "GMH Lab SDS",
   brandUrl: "https://kaleidoscopeofbutterflies.com",
   brandTarget: "_self",
 

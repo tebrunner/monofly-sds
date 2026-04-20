@@ -23,7 +23,7 @@ export const StoryHello: StoryObj<Record<string, never>> = {
         <FlexItem size="major">
           <Flex direction="column" gap="300">
             <Logo />
-            <TextHeading>Monofly Simple Design System</TextHeading>
+            <TextHeading>GMh LAb Simple Design System</TextHeading>
             <Text>
               Simple Design System (SDS) is a base design system that shows how
               Figma’s Variables, Styles, Components, and Code Connect can be

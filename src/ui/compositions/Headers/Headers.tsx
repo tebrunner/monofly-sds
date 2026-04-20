@@ -197,7 +197,7 @@ export function Header({ className, ...props }: HeaderProps) {
         <FlexItem size="minor">
           <Logo 
             href="/"
-            aria-label="MonoFly logo, navigate to homepage"
+            aria-label="GMH Lab logo, navigate to homepage"
             showText={true}
           />
         </FlexItem>

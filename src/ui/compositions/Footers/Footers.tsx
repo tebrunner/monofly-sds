@@ -31,7 +31,7 @@ export function Footer({ className, ...props }: FooterProps) {
             <FlexItem>
               <Logo className="footer-logo" 
                 href="/"
-                aria-label="MonoFly logo, navigate to homepage"
+                aria-label="GMH Lab logo, navigate to homepage"
                 showText={false}
               />
             </FlexItem>
