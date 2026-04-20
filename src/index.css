@@ -1,7 +1,7 @@
-@import url("./reset.css");
-@import url("./responsive.css");
-@import url("./theme.css");
-@import url("./icons.css");
+@import url("./styles/reset.css");
+@import url("./styles/responsive.css");
+@import url("./styles/theme.css");
+@import url("./styles/icons.css");
 
 :root {
   --global-focus-ring-size: var(--sds-size-stroke-focus-ring);
