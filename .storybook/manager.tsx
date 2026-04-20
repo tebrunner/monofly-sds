@@ -1,6 +1,6 @@
-import { addons } from "@storybook/manager-api";
+import { addons } from "storybook/manager-api";
 import "../src/index.css";
-import "../src/theme.css";
+import "../src/styles/theme.css";
 import theme from "./theme";
 
 addons.setConfig({
