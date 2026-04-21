@@ -32,7 +32,7 @@ export function HeaderAuth() {
   const userButtons = (
     <>
       <Button
-        variant="subtle"
+        variant="neutral"
         size="small"
         onPress={() =>
           login({
@@ -41,7 +41,7 @@ export function HeaderAuth() {
           })
         }
       >
-        Log in
+        Sign in
       </Button>
       <Button
         size="small"

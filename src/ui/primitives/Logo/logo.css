@@ -1,12 +1,12 @@
 .logo {
-  --border-radius: var(--sds-size-radius-200);
+  --border-radius: var(--sds-size-radius-100);
   border-radius: var(--border-radius);
   position: relative;
   color: inherit;
 
   &[data-focus-visible] {
     outline: none;
-    --offset: calc(var(--sds-size-stroke-border) * 2);
+    --offset: calc(var(--sds-size-stroke-border) * 6);
     &::before {
       content: "";
       border-radius: calc(var(--border-radius) + var(--offset));
@@ -21,15 +21,15 @@
   }
 
   > svg {
-    color: var(--sds-color-icon-default-default);
+    color: var(--sds-color-icon-default);
     height: auto;
-    width: var(--sds-size-icon-small);
+    width: var(--sds-size-icon-medium);
   }
 }
 
 .logo__text {
-  font-family: Inter, sans-serif;
-  font-size: 19px;
-  font-weight: 700;
+  font-family: var(--sds-typography-family-sans);
+  font-size: 21px;
+  font-weight: 500;
   color: inherit;
 }
