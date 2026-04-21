@@ -19,7 +19,7 @@ export function Footer({ className, ...props }: FooterProps) {
   return (
     <Section
       elementType="footer"
-      variant="brand"
+      variant="stroke"
       paddingTop="1600"
       paddingBottom="4000"
       style={{ marginTop: "auto" }}

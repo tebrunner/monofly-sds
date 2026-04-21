@@ -1,14 +1,10 @@
-import { Footer, Header } from "compositions";
 import { AllProviders } from "data";
-import LinksPage from "./pages/LinksPage";
-
+import TemplatesPage from "./pages/TemplatesPage";
 
 function App() {
   return (
     <AllProviders>
-      <Header />
-      <LinksPage />
-      <Footer />
+      <TemplatesPage />
     </AllProviders>
   );
 }

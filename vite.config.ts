@@ -17,6 +17,7 @@ export default defineConfig({
       layout: path.resolve(__dirname, "./src/ui/layout"),
       pages: path.resolve(__dirname, "./src/pages"),
       primitives: path.resolve(__dirname, "./src/ui/primitives"),
+      templates: path.resolve(__dirname, "./src/ui/templates"),
       utils: path.resolve(__dirname, "./src/ui/utils"),
     },
   },
