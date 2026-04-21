@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { IconInfo } from "icons";
 import {
   Button,
   ButtonDanger,
@@ -8,6 +7,7 @@ import {
   TextStrong,
 } from "primitives";
 import { ComponentProps } from "react";
+import { IconInfo } from "../../ui/icons/IconInfo";
 
 const meta: Meta<typeof Notification> = {
   component: Notification,

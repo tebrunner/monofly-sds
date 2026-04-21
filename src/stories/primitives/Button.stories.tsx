@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { IconActivity, IconArrowLeft } from "icons";
 import { Button, ButtonDanger, ButtonGroup } from "primitives";
+import { IconActivity } from "../../ui/icons/IconActivity";
+import { IconArrowLeft } from "../../ui/icons/IconArrowLeft";
 
 const meta: Meta<typeof Button> = {
   component: Button,

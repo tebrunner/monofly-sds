@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import { PricingPlan, Product } from "data";
 import { useMediaQuery } from "hooks";
-import { IconStar } from "icons";
 import { Flex } from "layout";
 import {
   Avatar,
@@ -22,6 +21,7 @@ import {
   TextSubheading,
 } from "primitives";
 import { ComponentPropsWithoutRef, ReactNode } from "react";
+import { IconStar } from "../../icons/IconStar";
 import { AnchorOrButton, AnchorOrButtonProps } from "utils";
 import "./cards.css";
 

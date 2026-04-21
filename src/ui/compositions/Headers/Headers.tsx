@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import { useAuth } from "data";
 import { useMediaQuery } from "hooks";
-import { IconChevronDown, IconMenu, IconX } from "icons";
 import { Flex, FlexItem, Section, type SectionProps } from "layout";
 import {
   Avatar,
@@ -21,6 +20,9 @@ import {
   NavigationPill,
 } from "primitives";
 import { useState } from "react";
+import { IconChevronDown } from "../../icons/IconChevronDown";
+import { IconMenu } from "../../icons/IconMenu";
+import { IconX } from "../../icons/IconX";
 import { AnchorOrButton } from "utils";
 import "./headers.css";
 

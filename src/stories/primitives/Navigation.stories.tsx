@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { IconStar } from "icons";
 import { Navigation, NavigationButton, NavigationPill } from "primitives";
 import { useState } from "react";
+import { IconStar } from "../../ui/icons/IconStar";
 
 const meta: Meta<typeof Navigation> = {
   component: Navigation,

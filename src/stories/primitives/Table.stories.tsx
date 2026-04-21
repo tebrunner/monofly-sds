@@ -1,6 +1,5 @@
 import { useState } from "storybook/preview-api";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { IconTrash } from "icons";
 import { Flex } from "layout";
 import {
   Button,
@@ -15,6 +14,7 @@ import {
   Tag,
 } from "primitives";
 import { SortDescriptor } from "react-stately";
+import { IconTrash } from "../../ui/icons/IconTrash";
 
 const meta: Meta<typeof Table> = {
   component: Table,

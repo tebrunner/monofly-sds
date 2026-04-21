@@ -8,7 +8,6 @@ const __dirname = dirname(__filename);
 
 const config: StorybookConfig = {
   stories: [
-    "../src/stories/**/*.mdx",
     "../src/stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
 
@@ -42,6 +41,14 @@ const config: StorybookConfig = {
 
   typescript: {
     reactDocgen: "react-docgen-typescript",
+    reactDocgenTypescriptOptions: {
+      include: [
+        "./**/*.ts",
+        "./**/*.tsx",
+        "../src/**/*.ts",
+        "../src/**/*.tsx",
+      ],
+    },
   },
 };
 export default config;

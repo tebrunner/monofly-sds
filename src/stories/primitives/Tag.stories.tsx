@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { IconAirplay, IconCheck } from "icons";
 import { Flex } from "layout";
 import {
   Label,
@@ -10,6 +9,8 @@ import {
   TagToggleList,
 } from "primitives";
 import { ComponentProps } from "react";
+import { IconAirplay } from "../../ui/icons/IconAirplay";
+import { IconCheck } from "../../ui/icons/IconCheck";
 
 const meta: Meta<typeof Tag> = {
   component: Tag,
