@@ -1,3 +1,212 @@
+import { Card } from "compositions";
+import {
+  IconArrowRight,
+  IconGithub,
+  IconInstagram,
+  IconLinkedin,
+  IconYoutube,
+} from "icons";
+import { useMediaQuery } from "hooks";
+import { Flex, FlexItem, Section } from "layout";
+import {
+  Button,
+  ButtonGroup,
+  Image,
+  Tag,
+  TagButton,
+  Text,
+  TextStrong,
+  TextContentTitle,
+  TextContentHeading,
+  TextHeading,
+  TextSmall,
+} from "primitives";
+
+const featuredLinks = [
+  {
+    title: "Book a brand shoot",
+    description: "Creative direction, wardrobe notes, and next-week openings.",
+    href: "#book-a-brand-shoot",
+  },
+  {
+    title: "Shop my creator toolkit",
+    description: "Cameras, lighting, presets, and the gear I use every day.",
+    href: "#shop-my-creator-toolkit",
+  },
+  {
+    title: "Watch the weekly studio vlog",
+    description: "Behind the scenes, launches, and what is working right now.",
+    href: "#watch-the-weekly-studio-vlog",
+  },
+  {
+    title: "Download the free launch checklist",
+    description: "A simple planning template for your next drop or campaign.",
+    href: "#download-the-free-launch-checklist",
+  },
+];
+
+const socialLinks = [
+  { label: "Instagram", href: "#instagram", icon: <IconInstagram /> },
+  { label: "YouTube", href: "#youtube", icon: <IconYoutube /> },
+  { label: "LinkedIn", href: "#linkedin", icon: <IconLinkedin /> },
+  { label: "GitHub", href: "#github", icon: <IconGithub /> },
+];
+
+const quickStats = [
+  { label: "Subscribers", value: "42k" },
+  { label: "Weekly reach", value: "180k" },
+  { label: "Brand partners", value: "28" },
+];
+
 export function Demo() {
-  return <></>;
+  const { isMobile } = useMediaQuery();
+  const sectionPadding = isMobile ? "600" : "1200";
+  const pageGap = isMobile ? "600" : "1200";
+
+  return (
+    <Section padding={sectionPadding} variant="subtle">
+      <Flex
+        gap={pageGap}
+        alignPrimary="center"
+        alignSecondary="center"
+        direction="row"
+        container
+      >
+          <Card
+            variant="default"
+            padding="800"
+          >
+            <Flex direction="column" alignPrimary="center" alignSecondary="center" gap="400">
+              <Image
+                  src="https://avatars.githubusercontent.com/u/9919?s=200&v=4"
+                  alt="Profile Picture of Ava Monroe"
+                  size="large"
+                  style={{ borderRadius: "100%" }}
+              />
+              <Flex
+                direction="column"
+                gap="300"
+                style={{ width: "100%" }}
+              >
+                <Tag scheme="positive" variant="primary">
+                  New course live
+                </Tag>
+                <TextContentTitle
+                  align="center"
+                  title="Ava Monroe"
+                  subtitle={
+                    <>
+                      Creative strategist sharing launch notes, studio
+                      workflows, and simple systems for independent brands.
+                    </>
+                  }
+                />
+              </Flex>
+             </Flex>
+
+              <Flex
+                type="third"
+                gap="600"
+                alignPrimary="space-between"
+                alignSecondary="stretch"
+                
+              >
+                {quickStats.map((stat) => (
+                  <FlexItem key={stat.label} size="fill">
+                    <Card
+                      variant="default"
+                      padding="600"
+                      style={{ height: "100%" }}
+                    >
+                      <Flex
+                        direction="column"
+                        alignSecondary="center"
+                        gap="100"
+                      >
+                        <TextSmall>{stat.label}</TextSmall>
+                        <TextHeading>{stat.value}</TextHeading>
+                      </Flex>
+                    </Card>
+                  </FlexItem>
+                ))}
+              </Flex>
+
+              <Flex direction="column" gap="600">
+                <TextContentHeading
+                  align="start"
+                  heading="Featured links"
+                  subheading="Everything important this week, in one place."
+                />
+                <ButtonGroup
+                  align="stack"
+                  style={{
+                    width: "100%",
+                  }}
+                >
+                  {featuredLinks.map((link) => (
+                    <Button
+                      key={link.title}
+                      href={link.href}
+                      variant="neutral"
+                      style={{
+                        justifyContent: "space-between",
+                        textAlign: "left",
+                      }}
+                    >
+                      <Flex
+                        alignPrimary="space-between"
+                        alignSecondary="center"
+                        style={{ width: "100%" }}
+                      >
+                        <Flex direction="column" gap="100">
+                          <TextStrong>{link.title}</TextStrong>
+                          <Text>{link.description}</Text>
+                        </Flex>
+                        <IconArrowRight />
+                      </Flex>
+                    </Button>
+                  ))}
+                </ButtonGroup>
+              </Flex>
+
+              <Card variant="brand" padding="600">
+                <Flex
+                  direction="column"
+                  gap="300"
+                  alignSecondary={isMobile ? "stretch" : "center"}
+                >
+                  <Flex direction="column" gap="100">
+                    <TextHeading>Join the studio memo</TextHeading>
+                    <Text>
+                      One practical email every Friday with new templates,
+                      campaign notes, and upcoming drops.
+                    </Text>
+                  </Flex>
+                  <Button
+                    href="#join-the-studio-memo"
+                    variant="primary"
+                    style={{ alignSelf: isMobile ? "stretch" : "flex-start" }}
+                  >
+                    Subscribe
+                  </Button>
+                </Flex>
+              </Card>
+
+              <Flex direction="column" gap="300" alignSecondary="center">
+                <ButtonGroup align="center">
+                  {socialLinks.map((link) => (
+                    <TagButton key={link.label} href={link.href}>
+                      <Flex gap="100" alignSecondary="center">
+                        {link.icon}
+                        <span>{link.label}</span>
+                      </Flex>
+                    </TagButton>
+                  ))}
+                </ButtonGroup>
+                <TextSmall>hello@avamonroe.studio</TextSmall>
+              </Flex>
+          </Card>
+      </Flex>
+    </Section>
+  );
 }
