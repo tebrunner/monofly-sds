@@ -1,11 +1,7 @@
-import { Demo } from "../examples/Demo";
+import { Demo } from "../examples/Linkinbio-00";
 
-function LinksPage() {
-  return (
-    <>
-      <Demo />
-    </>
-  );
+function DemosPage() {
+  return <Demo />;
 }
 
-export default LinksPage;
+export default DemosPage;

@@ -1,7 +1,7 @@
-import { Templates } from "templates";
+import { LinkInBio } from "../examples/Linkinbio-02";
 
-function TemplatesPage() {
-  return <Templates />;
+function DemosPage() {
+  return <LinkInBio />;
 }
 
-export default TemplatesPage;
+export default DemosPage;
