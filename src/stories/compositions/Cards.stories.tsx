@@ -7,17 +7,15 @@ import {
   StatsCard,
   TestimonialCard,
 } from "compositions";
-import {
-  IconActivity,
-  IconClock,
-  IconCode,
-  IconCompass,
-  IconSmile,
-} from "icons";
 import { placeholder } from "images";
 import { Flex } from "layout";
 import { Button, ButtonGroup, Image, Text, TextHeading } from "primitives";
 import { ComponentProps } from "react";
+import { IconActivity } from "../../ui/icons/IconActivity";
+import { IconClock } from "../../ui/icons/IconClock";
+import { IconCode } from "../../ui/icons/IconCode";
+import { IconCompass } from "../../ui/icons/IconCompass";
+import { IconSmile } from "../../ui/icons/IconSmile";
 
 const meta: Meta<typeof Card> = {
   component: Card,

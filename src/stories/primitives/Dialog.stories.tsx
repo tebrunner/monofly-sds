@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { IconMenu } from "icons";
 import {
   Button,
   ButtonGroup,
@@ -19,6 +18,7 @@ import {
   TableRow,
 } from "primitives";
 import { useState } from "react";
+import { IconMenu } from "../../ui/icons/IconMenu";
 
 const meta: Meta<typeof Dialog> = {
   component: Dialog,

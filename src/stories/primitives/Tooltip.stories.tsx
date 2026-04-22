@@ -1,10 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import {
-  IconArrowDown,
-  IconArrowLeft,
-  IconArrowRight,
-  IconArrowUp,
-} from "icons";
 import { Flex } from "layout";
 import {
   DialogTrigger,
@@ -13,6 +7,10 @@ import {
   TextStrong,
   Tooltip,
 } from "primitives";
+import { IconArrowDown } from "../../ui/icons/IconArrowDown";
+import { IconArrowLeft } from "../../ui/icons/IconArrowLeft";
+import { IconArrowRight } from "../../ui/icons/IconArrowRight";
+import { IconArrowUp } from "../../ui/icons/IconArrowUp";
 
 const meta: Meta<typeof Tooltip> = {
   component: Tooltip,

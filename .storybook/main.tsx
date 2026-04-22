@@ -8,7 +8,6 @@ const __dirname = dirname(__filename);
 
 const config: StorybookConfig = {
   stories: [
-    "../src/stories/**/*.mdx",
     "../src/stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
 
@@ -25,14 +24,15 @@ const config: StorybookConfig = {
     if (config.resolve) {
       config.resolve.alias = {
         ...config.resolve.alias,
-        compositions: path.resolve(__dirname, "/src/ui/compositions"),
-        hooks: path.resolve(__dirname, "/src/ui/hooks"),
-        icons: path.resolve(__dirname, "/src/ui/icons"),
-        images: path.resolve(__dirname, "/src/ui/images"),
-        layout: path.resolve(__dirname, "/src/ui/layout"),
-        primitives: path.resolve(__dirname, "/src/ui/primitives"),
-        providers: path.resolve(__dirname, "/src/ui/providers"),
-        utils: path.resolve(__dirname, "/src/ui/utils"),
+        compositions: path.resolve(__dirname, "../src/ui/compositions"),
+        hooks: path.resolve(__dirname, "../src/ui/hooks"),
+        icons: path.resolve(__dirname, "../src/ui/icons"),
+        images: path.resolve(__dirname, "../src/ui/images"),
+        layout: path.resolve(__dirname, "../src/ui/layout"),
+        primitives: path.resolve(__dirname, "../src/ui/primitives"),
+        providers: path.resolve(__dirname, "../src/ui/providers"),
+        templates: path.resolve(__dirname, "../src/ui/templates"),
+        utils: path.resolve(__dirname, "../src/ui/utils"),
       };
     }
 
@@ -41,6 +41,14 @@ const config: StorybookConfig = {
 
   typescript: {
     reactDocgen: "react-docgen-typescript",
+    reactDocgenTypescriptOptions: {
+      include: [
+        "./**/*.ts",
+        "./**/*.tsx",
+        "../src/**/*.ts",
+        "../src/**/*.tsx",
+      ],
+    },
   },
 };
 export default config;

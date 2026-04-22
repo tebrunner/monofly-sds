@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { IconMenu } from "icons";
 import {
   MenuButton,
   MenuDescription,
@@ -8,6 +7,7 @@ import {
   MenuSeparator,
   MenuShortcut,
 } from "primitives";
+import { IconMenu } from "../../ui/icons/IconMenu";
 
 const meta: Meta<typeof MenuButton> = {
   component: MenuButton,
