@@ -20,7 +20,7 @@ const templateOptions = [
   {
     id: "marketing",
     label: "Marketing",
-    description: "Launch page structure with hero, features, and conversion CTA.",
+    description: "Launch page structure with hero, features, pricing, FAQ, and CTA.",
   },
 ] as const;
 
@@ -36,11 +36,11 @@ export function Templates() {
         <div className="template-showcase-intro">
           <TextTitlePage>Template demos</TextTitlePage>
           <Text>
-            Preview the new template layer with a switchable showcase. Each demo
+            Preview the template layer with a switchable showcase. Each demo
             uses the reusable template components directly, so this page doubles
             as a living smoke test.
           </Text>
-          <ButtonGroup align="start" className="template-showcase-controls">
+          <ButtonGroup align="start">
             {templateOptions.map((option) => (
               <Button
                 key={option.id}
@@ -53,28 +53,17 @@ export function Templates() {
           </ButtonGroup>
           <div className="template-showcase-meta">
             <TextSmall>
-              {
-                templateOptions.find((option) => option.id === activeTemplate)
-                  ?.description
-              }
+              {templateOptions.find((o) => o.id === activeTemplate)?.description}
             </TextSmall>
           </div>
         </div>
       </Section>
 
-      <div className="template-showcase-preview">{renderTemplate(activeTemplate)}</div>
+      <div className="template-showcase-preview">
+        {activeTemplate === "auth" && <AuthTemplate />}
+        {activeTemplate === "marketing" && <MarketingTemplate />}
+        {activeTemplate === "app-shell" && <AppShellTemplate />}
+      </div>
     </div>
   );
-}
-
-function renderTemplate(activeTemplate: TemplateOptionId) {
-  if (activeTemplate === "auth") {
-    return <AuthTemplate />;
-  }
-
-  if (activeTemplate === "marketing") {
-    return <MarketingTemplate />;
-  }
-
-  return <AppShellTemplate />;
 }

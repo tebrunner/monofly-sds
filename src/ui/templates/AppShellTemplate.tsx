@@ -1,65 +1,97 @@
 import { Footer, Header } from "compositions";
+import { useMediaQuery } from "hooks";
 import { Flex, FlexItem, Section } from "layout";
 import {
-  Button,
   Navigation,
   NavigationPill,
   Text,
   TextHeading,
   TextSmall,
   TextStrong,
-  TextTitlePage,
 } from "primitives";
+import { useState } from "react";
 import "./templates.css";
 
+const NAV_ITEMS = ["Overview", "Projects", "Activity", "Settings"] as const;
+type NavItem = (typeof NAV_ITEMS)[number];
+
 export function AppShellTemplate() {
+  const [activePage, setActivePage] = useState<NavItem>("Overview");
+  const { isTabletDown } = useMediaQuery();
+
   return (
     <div className="template-page-root">
       <Header />
-      <Section variant="subtle" padding="800">
-        <Flex container gap="600" className="template-shell-grid">
-          <FlexItem size="minor">
-            <aside className="template-rail">
-              <TextStrong>Workspace</TextStrong>
-              <Navigation direction="column">
-                <NavigationPill isSelected>Overview</NavigationPill>
-                <NavigationPill>Projects</NavigationPill>
-                <NavigationPill>Activity</NavigationPill>
-                <NavigationPill>Settings</NavigationPill>
-              </Navigation>
-            </aside>
-          </FlexItem>
 
+      <Section variant="neutral" padding="800">
+        <Flex container gap="600" alignSecondary="start">
+          {/* Left rail — hidden on mobile */}
+          {!isTabletDown && (
+            <FlexItem size="minor">
+              <aside className="template-block template-rail">
+                <TextStrong>Workspace</TextStrong>
+                <Navigation direction="column">
+                  {NAV_ITEMS.map((item) => (
+                    <NavigationPill
+                      key={item}
+                      isSelected={activePage === item}
+                      onPress={() => setActivePage(item)}
+                    >
+                      {item}
+                    </NavigationPill>
+                  ))}
+                </Navigation>
+              </aside>
+            </FlexItem>
+          )}
+
+          {/* Main + utility rail */}
           <FlexItem size="major">
-            <main className="template-main" aria-label="App shell content">
-              <TextTitlePage>App Shell Template</TextTitlePage>
-              <Text>
-                Canonical app structure with top navigation, left rail, main
-                content area, and a utility rail.
-              </Text>
+            <Flex gap="400" wrap={isTabletDown} alignSecondary="start">
+              {/* Primary content */}
+              <FlexItem size={isTabletDown ? "full" : "major"}>
+                <main
+                  className="template-block"
+                  aria-label="App shell primary content"
+                >
+                  <Flex direction="column" gap="600">
+                    <Flex direction="column" gap="200">
+                      <TextHeading>{activePage}</TextHeading>
+                      <Text>
+                        Use this region for dashboard cards, data tables,
+                        workflows, and product-specific views.
+                      </Text>
+                    </Flex>
+                    {/* Placeholder content rows */}
+                    <Flex direction="column" gap="300">
+                      {Array.from({ length: 3 }).map((_, i) => (
+                        <div key={i} className="template-skeleton-row" />
+                      ))}
+                    </Flex>
+                  </Flex>
+                </main>
+              </FlexItem>
 
-              <div className="template-content-grid">
-                <section className="template-block">
-                  <TextHeading>Primary Content</TextHeading>
-                  <Text>
-                    Use this region for dashboard cards, data tables, workflows,
-                    and product-specific views.
-                  </Text>
-                  <Button>Primary action</Button>
-                </section>
-
+              {/* Utility rail */}
+              <FlexItem size={isTabletDown ? "full" : "minor"}>
                 <aside className="template-block">
-                  <TextHeading>Utility Rail</TextHeading>
-                  <TextSmall>
-                    Add contextual activity, alerts, assignees, and pinned links
-                    in this rail.
-                  </TextSmall>
+                  <Flex direction="column" gap="400">
+                    <TextHeading>Activity</TextHeading>
+                    <TextSmall>
+                      Add contextual activity, alerts, assignees, and pinned
+                      links here.
+                    </TextSmall>
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <div key={i} className="template-skeleton-row" />
+                    ))}
+                  </Flex>
                 </aside>
-              </div>
-            </main>
+              </FlexItem>
+            </Flex>
           </FlexItem>
         </Flex>
       </Section>
+
       <Footer />
     </div>
   );

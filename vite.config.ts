@@ -8,14 +8,14 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      compositions: path.resolve(__dirname, "./src/ui/compositions"),
       data: path.resolve(__dirname, "./src/data"),
-      examples: path.resolve(__dirname, "./src/examples"),  
+      examples: path.resolve(__dirname, "./src/examples"),
+      pages: path.resolve(__dirname, "./src/pages"),
+      compositions: path.resolve(__dirname, "./src/ui/compositions"),
       hooks: path.resolve(__dirname, "./src/ui/hooks"),
       icons: path.resolve(__dirname, "./src/ui/icons"),
       images: path.resolve(__dirname, "./src/ui/images"),
       layout: path.resolve(__dirname, "./src/ui/layout"),
-      pages: path.resolve(__dirname, "./src/pages"),
       primitives: path.resolve(__dirname, "./src/ui/primitives"),
       templates: path.resolve(__dirname, "./src/ui/templates"),
       utils: path.resolve(__dirname, "./src/ui/utils"),
